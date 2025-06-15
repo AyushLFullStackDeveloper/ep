@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enjoy Programming</title>
+    <link rel="icon" type="image/x-icon" href="./assets/logo/ep-logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-5AZdO4K8XmtNzXZGhXYmC/Tb0mQm67X7Dh7QKXv6ej3qLJgNpZ4rCkS6oRanf5cj6eOefA1bZ2ewzaKBiV5wTw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="../helper/styleswitchers.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: var(--theme-color, #333);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 2rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
+      }
+
+      .logo {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .main-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--theme-color, #333);
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+      }
+
+      .subtitle {
+        font-size: 1.1rem;
+        color: var(--theme-color, #666);
+        opacity: 0.8;
+      }
+
+      .quiz-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+        flex: 1;
+        align-content: start;
+      }
+
+      .quiz-card {
+        background: var(--card-bg, #1b1a1a53);
+        border-radius: 12px;
+        padding: 2rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.565);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .quiz-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #2196f3, #21c4f3);
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      .quiz-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+        border-color: var(--accent-color, #2196f3);
+      }
+
+      .quiz-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .quiz-icon {
+        width: 60px;
+        height: 60px;
+        margin: 0 auto 1.5rem;
+        display: block;
+        transition: transform 0.3s ease;
+      }
+
+      .quiz-card:hover .quiz-icon {
+        transform: scale(1.1);
+      }
+
+      .quiz-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: var(--theme-color, #333);
+        margin-bottom: 0.5rem;
+      }
+
+      .quiz-description {
+        font-size: 0.9rem;
+        color: var(--theme-color, #666);
+        opacity: 0.8;
+        line-height: 1.4;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .container {
+          padding: 1rem;
+        }
+        
+        .main-title {
+          font-size: 2rem;
+        }
+        
+        .quiz-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+        
+        .quiz-card {
+          padding: 1.5rem;
+        }
+        
+        .quiz-icon {
+          width: 50px;
+          height: 50px;
+        }
+        
+        .quiz-title {
+          font-size: 1.2rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-title {
+          font-size: 1.8rem;
+        }
+        
+        .quiz-card {
+          padding: 1.2rem;
+        }
+        
+        .quiz-icon {
+          width: 45px;
+          height: 45px;
+        }
+        
+        .quiz-title {
+          font-size: 1.1rem;
+        }
+      }
+    </style>
+    <script>
+      function onHTMLclick(type) {
+        if (type == 0) {
+          window.location.href = "./quiz/ep-quiz.html?quiz=html";
+        } else if (type == 1) {
+          window.location.href = "./quiz/ep-quiz.html?quiz=css";
+        } else if (type == 2) {
+          window.location.href = "./quiz/ep-quiz.html?quiz=communication";
+        } else if (type == 3) {
+          window.location.href = "./quiz/ep-quiz.html?quiz=fundamentals";
+        } else {
+          window.location.href = "./quiz/ep-quiz.html?quiz=js";
+        }
+      }
+      
+      function onGITHUBCLick() {
+        window.location.href = "https://github.com/EnjoyProgrammingAdmin/html-project1";
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="../assets/logo/resized-logo.jpeg" class="logo" alt="Enjoy Programming Logo" />
+        <h1 class="main-title">ENJOY PROGRAMMING</h1>
+        <p class="subtitle">Choose a category to begin your programming test.</p>
+      </header>
+
+      <main class="quiz-grid">
+        <div class="quiz-card" onclick="onHTMLclick(0)">
+          <img src="../assets/images/icons/html-logo.png" class="quiz-icon" alt="HTML Icon" />
+          <h2 class="quiz-title">HTML</h2>
+          <p class="quiz-description">Test your knowledge of HTML structure and page elements.</p>
+        </div>
+
+        <div class="quiz-card" onclick="onHTMLclick(1)">
+          <img src="../assets/images/icons/css-logo.png" class="quiz-icon" alt="CSS Icon" />
+          <h2 class="quiz-title">CSS</h2>
+          <p class="quiz-description">Test your skills in CSS styling and page layout.</p>
+        </div>
+
+        <div class="quiz-card" onclick="onHTMLclick(4)">
+          <img src="../assets/images/icons/js-logo.png" class="quiz-icon" alt="JavaScript Icon" />
+          <h2 class="quiz-title">JavaScript</h2>
+          <p class="quiz-description">Assess your skills in adding behavior and responsiveness using JavaScript.</p>
+        </div>
+
+        <div class="quiz-card" onclick="onHTMLclick(2)">
+          <img src="https://cdn-icons-png.freepik.com/512/9564/9564944.png" class="quiz-icon" alt="Communication Icon" />
+          <h2 class="quiz-title">Communication Skills</h2>
+          <p class="quiz-description">Assess your communication and interpersonal skills.</p>
+        </div>
+
+        <div class="quiz-card" onclick="onHTMLclick(3)">
+          <img src="https://www.athleticskillsmodel.nl/wp-content/uploads/2024/06/Fundamental-10-BLACK_RGB-web-768x768.png" class="quiz-icon" alt="Fundamentals Icon" />
+          <h2 class="quiz-title">Fundamentals</h2>
+          <p class="quiz-description">Evaluate your grasp of key programming and foundations.</p>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

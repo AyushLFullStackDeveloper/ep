@@ -1,0 +1,254 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+.course-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background-color: #24242e;
+  height: auto;
+  /* Changed from 100vh to auto for better mobile display */
+}
+
+.course-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.course-content {
+  padding: 25px;
+}
+
+.course-title {
+  color: #3a86ff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.course-details {
+  margin-bottom: 20px;
+}
+
+.course-feature {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.course-feature i {
+  color: #4caf50;
+  margin-right: 10px;
+}
+.st-btn{
+    background-color:#2196f3 !important;
+    color: rgb(255, 255, 255) !important;
+    border: none !important;
+}
+.st-btn:hover{
+    background-color: #ffffff !important;
+    color: rgb(29, 98, 234) !important;
+}
+.btn-register {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 25px;
+  font-weight: 600;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-register:hover {
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  transform: scale(1.05);
+}
+
+.hero-section {
+  background: #24242e;
+  color: white;
+  padding: 50px 0;
+  /* Reduced padding for mobile */
+  border-radius: 0 0 30px 30px;
+  /* Smaller radius on mobile */
+  margin-bottom: 30px;
+  /* Reduced margin for mobile */
+}
+
+.course-image {
+  border-radius: 15px;
+  transition: transform 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  height: auto;
+  /* Changed from 70vh to auto */
+  max-height: 100vh;
+  /* Set max height */
+  object-fit: cover;
+  /* Changed from contain to cover */
+  width: 100%;
+}
+
+.quote-icon {
+  font-size: 30px;
+  color: #3a86ff;
+  opacity: 0.5;
+}
+
+/* Desktop/mobile image switching */
+.desktop-only {
+  display: none;
+}
+
+.mobile-only {
+  display: block;
+}
+
+.footer-social-icon {
+  font-size: 1.5rem;
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.footer-social-icon:hover {
+  color: #3a86ff;
+}
+
+.contact-info {
+  margin-bottom: 8px;
+  text-decoration: none !important;
+  color: white;
+}
+
+/* Improved benefits section spacing */
+.benefits-section {
+  padding: 1rem 0;
+}
+
+/* Back button styles */
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #2196f3;
+  border: none !important;
+  color: white;
+  border: 2px solid white;
+  border-radius: 50px;
+  padding: 8px 20px;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: white;
+  color: #3b82f6;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.back-button i {
+  margin-right: 8px;
+}
+
+/* Fixed back button for mobile */
+.mobile-back-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  transition: all 0.3s;
+  text-decoration: none;
+}
+
+.mobile-back-button:hover {
+  background-color: #2563eb;
+  transform: scale(1.05);
+}
+
+/* Updated mobile order classes */
+@media (max-width: 991px) {
+  .benefits-first {
+    order: 2;
+    margin-bottom: 2rem;
+  }
+
+  .image-second {
+    order: 1;
+    min-height: 500px;
+  }
+
+  .hero-section {
+    padding: 40px 0;
+  }
+
+  .hero-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero-section p {
+    font-size: 1.1rem;
+  }
+
+  .btn-register {
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+  }
+  .back-button {
+    display: none; /* Hide desktop back button on mobile */
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 992px) {
+  .desktop-only {
+    display: block;
+  }
+
+  .mobile-only {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 80px 0;
+    border-radius: 0 0 50px 50px;
+    margin-bottom: 50px;
+  }
+
+  .btn-register {
+    margin-left: 9rem;
+  }
+
+  .course-image {
+    height: 70vh;
+    object-fit: contain;
+  }
+  .mobile-back-button {
+    display: none; /* Hide mobile back button on desktop */
+  }
+
+  /* Footer alignment for desktop */
+  .footer-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+}

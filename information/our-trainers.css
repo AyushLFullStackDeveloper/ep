@@ -1,0 +1,215 @@
+/* Trainers Section Styling */
+.trainers-section {
+    padding: 40px 0;
+}
+
+.main-heading {
+    text-align: center;
+    color: var(--skin-color, #1a4d8c);
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    position: relative;
+    font-weight: 700;
+}
+
+.main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--skin-color, #1a4d8c);
+}
+
+.project-mentors-heading {
+    margin-top: 60px;
+}
+
+.trainers-container {
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Card Styling */
+.trainer-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.trainer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.trainer-info {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.trainer-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.trainer-card:hover .trainer-img {
+    transform: scale(1.05);
+}
+
+.trainer-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(to top, var(--theme-color), transparent);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.trainer-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.trainer-title {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.trainer-bio {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+}
+
+.trainer-card:hover .trainer-bio {
+    max-height: 200px; /* Increased to handle longer bios */
+    opacity: 1;
+}
+
+/* Social Icons */
+.trainer-social {
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: right 0.3s ease;
+}
+
+.trainer-card:hover .trainer-social {
+    right: 20px;
+}
+
+.social-icon {
+    width: 35px;
+    height: 35px;
+    background-color: white ;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--theme-color) !important;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none !important;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: white !important;
+}
+
+/* Dark Mode Support */
+body.dark .trainer-card {
+    background-color: #222;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .social-icon {
+    background-color: #333;
+    color: var(--skin-color, #2196f3);
+}
+
+body.dark .social-icon:hover {
+    background-color: var(--skin-color, #2196f3);
+    color: #333;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1200px) {
+    .trainers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 992px) {
+    .trainers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .trainers-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 20px;
+    }
+    
+    .trainer-img {
+        height: 250px;
+    }
+    
+    .trainer-name {
+        font-size: 1.3rem;
+    }
+    
+    .trainer-title {
+        font-size: 1rem;
+    }
+    
+    .main-heading {
+        font-size: 2.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .trainers-grid {
+        grid-template-columns: 1fr;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+    
+    .trainer-img {
+        height: 280px;
+    }
+    
+    .main-heading {
+        font-size: 2rem;
+    }
+}

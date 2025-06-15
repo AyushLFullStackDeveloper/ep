@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ENJOY PROGRAMMING</title>
+    <link href="./assets/images/logo.png" rel="icon" />
+    <script src="./ep-quiz.js"></script>
+    <link rel="stylesheet" href="./ep-quizz.css">
+  </head>
+  <body>
+    <div class="quiz-container">
+      <main class="main-content">
+        <div class="question-display">
+          <h1 id="text-display" class="question-text loading">Loading...</h1>
+        </div>
+
+        <div class="answers-grid">
+          <button
+            class="answer-button"
+            id="answer-one"
+            onclick="answerButtonClicked('1')"
+          >
+            Option A
+          </button>
+          <button
+            class="answer-button"
+            id="answer-two"
+            onclick="answerButtonClicked('2')"
+          >
+            Option B
+          </button>
+          <button
+            class="answer-button"
+            id="answer-three"
+            onclick="answerButtonClicked('3')"
+          >
+            Option C
+          </button>
+          <button
+            class="answer-button"
+            id="answer-four"
+            onclick="answerButtonClicked('4')"
+          >
+            Option D
+          </button>
+        </div>
+      </main>
+
+      <aside class="sidebar">
+        <div class="stat-card question-card">
+          <div class="stat-label">Question</div>
+          <div id="question-number" class="stat-value">1</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Correct</div>
+          <div id="score-one" class="stat-value">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Wrong</div>
+          <div id="score-two" class="stat-value">0</div>
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
